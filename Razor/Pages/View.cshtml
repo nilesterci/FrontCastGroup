@@ -1,0 +1,20 @@
+﻿@page
+@using Razor.Models;
+@model Razor.Pages.ViewModel
+@{
+    ViewData["Title"] = "Ver";
+    Conta contasOne = (Conta)TempData["contasOne"];
+}
+
+<div class="text-center">
+    <h1 class="display-4">Visualizar conta</h1>
+
+    <div class="card" style="width: 18rem;">
+        <img src="https://simpleicon.com/wp-content/uploads/account.png" class="card-img-top" alt="@contasOne.Name">
+        <div class="card-body">
+            <h5 class="card-title">@contasOne.Id - @contasOne.Name</h5>
+            <p class="card-text">@contasOne.Description</p>
+            <a asp-page="./Edit" asp-route-id="@contasOne.Id" class="btn btn-primary">Editar</a>
+        </div>
+    </div>
+</div>
